@@ -1,0 +1,16 @@
+<div class="users-page">
+    <p class="users-title">Users List</p>
+    <div class="users-list">
+        <div class="user-row" *ngFor="let user of users; index as i;  trackBy:trackByUser">
+            <div class="user-data cut-text name">{{ user.first_name }} {{ user.last_name }}</div>
+            <div class="user-data cut-text email">{{ user.email }}</div>
+            <div class="user-data cut-text phone">{{ user.phone }}</div>
+            <div class="user-data edit-button">
+                <button class="general-button" (click)="navigateToUpdateUser(user)">edit</button>
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <button class="general-button add-new-user-button" (click)="addNewUser()">Add new User</button>
+    </div>
+</div>

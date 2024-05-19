@@ -1,0 +1,50 @@
+.users-page {
+    .user-form {
+        margin: 20px 0;
+
+        .form-field {
+            display: inline-grid;
+            width: 50%;
+            box-sizing: border-box;
+            padding: 0 5px;
+            margin: 5px 0;
+
+            .field-label {
+                font-size: 15px;
+            }
+
+            .field-input {
+                border: 1px solid gray;
+                border-radius: 4px;
+                line-height: 25px;
+            }
+        }
+    }
+
+    .save-user-button {
+        margin: auto;
+        min-width: 200px;
+    }
+
+    .updated-user-message {
+        color: green;
+        text-align: center;
+        margin: 10px 0;
+        font-size: 15px;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 600px) {
+    .users-page {
+        .user-form {
+            .form-field {
+                width: 100%;
+            }
+        }
+
+        .save-user-button {
+            width: 100%;
+        }
+    }
+}

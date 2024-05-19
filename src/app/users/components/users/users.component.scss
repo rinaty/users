@@ -1,0 +1,57 @@
+.users-page {
+    .users-list {
+        width: 100%;
+        border: 1px solid gray;
+        margin: 20px 0;
+
+        .user-row {
+            display: flex;
+            padding: 10px 0;
+            border-bottom: 1px solid gray;
+
+            .user-data {
+                flex: 2;
+                line-height: 30px;
+                padding: 0 5px;
+
+                &.email {
+                    text-decoration: underline;
+                }
+
+                &.edit-button {
+                    flex: 1;
+                }
+            }
+
+            &:last-child {
+                border: none;
+            }
+        }
+    }
+
+    .add-new-user-button {
+        margin: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .users-page {
+        .users-list {
+            .user-row {
+                display: block;
+
+                .user-data {
+                    width: 100%;
+                    box-sizing: border-box;
+
+                    .general-button {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .add-new-user-button {
+            width: 100%;
+        }
+    }
+}

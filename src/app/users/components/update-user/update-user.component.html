@@ -1,0 +1,22 @@
+<div [formGroup]="form" class="users-page">
+    <button class="general-button" (click)="goBackToList()">Back to list</button>
+    <p class="users-title">User Details</p>
+    <div *ngIf="form;else load_form" class="user-form">
+        <div *ngFor="let formField of formFields" class="form-field">
+            <label class="field-label">{{formField.label}}
+                <span *ngIf="form.get(formField.key)?.hasValidator(required)">*</span>
+            </label>
+            <input class="field-input" [formControlName]="formField.key" [id]="formField.key"
+                [placeholder]="formField.label" [type]="formField.type">
+            <label class="error" *ngIf="!form.get(formField.key)?.valid">invalid field</label>
+        </div>
+    </div>
+    <ng-template #load_form>
+        loading form...
+    </ng-template>
+    <div class="center">
+        <button [disabled]="!form.valid" class="general-button save-user-button"
+            (click)="saveUserDetails()">Save</button>
+    </div>
+    <div *ngIf="isUserUpdated" class="updated-user-message ">user details successfully saved!</div>
+</div>
