@@ -8,7 +8,7 @@
             </label>
             <input class="field-input" [formControlName]="formField.key" [id]="formField.key"
                 [placeholder]="formField.label" [type]="formField.type">
-            <label class="error" *ngIf="!form.get(formField.key)?.valid">invalid field</label>
+            <label class="error" *ngIf="form.get(formField.key)?.touched && !form.get(formField.key)?.valid">invalid field</label>
         </div>
     </div>
     <ng-template #load_form>
